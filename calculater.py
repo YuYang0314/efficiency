@@ -14,29 +14,12 @@ def calculater(P_3):
 '''
 def submit():
     P_3 = [float(P_1_Y_entry.get()),float(P_2_Y_entry.get()),float(P_3_X_entry.get()),float(P_1_X_entry.get()),float(P_2_X_entry.get())]
-    P_3_Y = (int(P_1_Y_entry.get())-int(P_2_Y_entry.get()))/(int(P_1_X_entry.get()) - int(P_2_X_entry.get()))*(int(P_3_X_entry.get()) - int(P_1_X_entry.get())) + int(P_1_Y_entry.get())
+    P_3_Y = (float(P_1_Y_entry.get())-float(P_2_Y_entry.get()))/(float(P_1_X_entry.get()) - float(P_2_X_entry.get()))*(float(P_3_X_entry.get()) - float(P_1_X_entry.get())) + float(P_1_Y_entry.get())
     '''
     P_3_Y = calculater(P_3)
     '''
     print(P_3_Y)
-    tk.Label(win, text = P_3_Y).grid(row = 2, column = 0)
-
-P_1_X_entry = tk.Entry(win,  font=('calibre',10,'normal'))
-P_1_Y_entry = tk.Entry(win,  font=('calibre',10,'normal'))
-P_2_X_entry = tk.Entry(win,  font=('calibre',10,'normal'))
-P_2_Y_entry = tk.Entry(win,  font=('calibre',10,'normal'))
-P_3_X_entry = tk.Entry(win,  font=('calibre',10,'normal'))
-sub_btn = tk.Button(win, text = 'sumbit', command = submit)
-
-P_1_X_entry.grid(row = 3, column = 1)
-P_1_Y_entry.grid(row = 0, column = 1)
-P_2_X_entry.grid(row = 3, column = 2)
-P_2_Y_entry.grid(row = 0, column = 2)
-P_3_X_entry.grid(row = 3, column = 3)
-sub_btn.grid(row = 5, column = 4)
-
-
-
+    tk.Label(win, text = P_3_Y).place(x = 0, y = 125)
 def close_1():      # to quit the whole window
             #this func is for unintended activation
     res = tkinter.messagebox.askquestion('Exit the calculator',
@@ -46,7 +29,28 @@ def close_1():      # to quit the whole window
 
     else :
         None
-    Button = tk.Button(win, text = 'Quit', width=10, height=5, command = close_1)
-    Button.place(x=400,y=20)
+P_1_X_entry = tk.Entry(win,  font=('calibre',10,'normal'))
+P_1_Y_entry = tk.Entry(win,  font=('calibre',10,'normal'))
+P_2_X_entry = tk.Entry(win,  font=('calibre',10,'normal'))
+P_2_Y_entry = tk.Entry(win,  font=('calibre',10,'normal'))
+P_3_X_entry = tk.Entry(win,  font=('calibre',10,'normal'))
+subtract_label_L1 = tk.Label(win, text = '-', font = ('calibre', 10, 'bold'))
+subtract_label_L2 = tk.Label(win, text = '-', font = ('calibre', 10, 'bold'))
+sub_btn = tk.Button(win, text = 'sumbit', command = submit)
+
+P_1_X_entry.place(x = 50, y = 150)
+P_1_Y_entry.place(x = 50, y = 100)
+P_2_X_entry.place(x = 215, y = 150)
+P_2_Y_entry.place(x = 215, y = 100)
+P_3_X_entry.place(x = 375, y = 125)
+subtract_label_L1.place(x = 199, y = 100)
+subtract_label_L2.place(x = 199, y = 150)
+sub_btn.place(x = 200, y = 300)
+
+
+
+
+Button = tk.Button(win, text = 'Quit', width=5, height=1, command = close_1)
+Button.place(x=350,y=300)
 win.mainloop()
 
