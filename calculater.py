@@ -14,7 +14,9 @@ def calculater(P_3):
 '''
 def submit():
     P_3 = [float(P_1_Y_entry.get()),float(P_2_Y_entry.get()),float(P_3_X_entry.get()),float(P_1_X_entry.get()),float(P_2_X_entry.get())]
-    P_3_Y = (float(P_1_Y_entry.get())-float(P_2_Y_entry.get()))/(float(P_1_X_entry.get()) - float(P_2_X_entry.get()))*(float(P_3_X_entry.get()) - float(P_1_X_entry.get())) + float(P_1_Y_entry.get())
+    P_3_Y = (float(P_1_Y_entry.get())-float(P_2_Y_entry.get()))/(float(P_1_X_entry.get()) 
+            - float(P_2_X_entry.get()))*(float(P_3_X_entry.get()) - float(P_1_X_entry.get())) 
+    + float(P_1_Y_entry.get())
     '''
     P_3_Y = calculater(P_3)
     '''
